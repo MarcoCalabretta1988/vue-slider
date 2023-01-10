@@ -22,11 +22,15 @@
     <script defer src="js/script.js"></script>
 </head>
 <body>
+    
     <div id="root">
+        
     <section id="carousel" class="container">
+        {{ autoPlay() }}
+        
         <!-- MAIN GALLERY -->
         <div class="gallery" >
-            <figure v-for="(pic,i) in pictures" :class="{'active': currentIndex === i}">
+            <figure v-for="(pic,i) in pictures" :class="{'active': currentIndex === i}" @mouseover="stopAutoPlay" @mouseleave="autoPlay">
                 <img :src="pic.image" :alt="pic.title" >
                 <h1>{{ pic.title }}</h1>
                 <p  v-text="pic.text"></p>

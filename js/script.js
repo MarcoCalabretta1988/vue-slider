@@ -29,8 +29,11 @@ const app = Vue.createApp({
         return{
             currentIndex : 0,
             pictures,
+            isrotate : true,
+            rotate : 0,
         }
     },
+
     methods: {
         changePic(target){
             if (target === 'next'){
@@ -49,8 +52,19 @@ const app = Vue.createApp({
                 this.currentIndex = target;
              }
 
-        }
+        },
+        autoPlay() {
+            if(this.isrotate){
+             this.rotate = setInterval (()=>{
+             this.changePic('next');
+             this.isrotate = false;
+            },3000);
+            }
+         },
+         stopAutoPlay(){
+             clearInterval(this.rotate);
+             this.isrotate = true;
+         },
     }
 });
-
 app.mount('#root');
