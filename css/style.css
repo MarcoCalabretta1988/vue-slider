@@ -25,7 +25,7 @@ body{
 }
 
 
-.gallery .active{
+.gallery figure .active{
     display: inline-block;
 }
 
@@ -48,7 +48,8 @@ body{
     border-radius: 30px;
 }
 
-.gallery img{
+
+.gallery figure img{
     width: 100%;
     height: 100%;
     display: none;
@@ -56,7 +57,7 @@ body{
 }
 
 
-.gallery h1{
+.gallery figure h1{
     position: absolute;
     bottom: 100px;
     right: 50px;
@@ -65,7 +66,7 @@ body{
     font-size: 30px;
 }
 
-.gallery p{
+.gallery  figure p{
     position: absolute;
     bottom: 35px;
     right: 10px;
