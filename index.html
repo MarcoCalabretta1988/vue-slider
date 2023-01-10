@@ -29,8 +29,8 @@
         {{ autoPlay() }}
         
         <!-- MAIN GALLERY -->
-        <div class="gallery" >
-            <figure v-for="(pic,i) in pictures" :class="{'active': currentIndex === i}" @mouseover="stopAutoPlay" @mouseleave="autoPlay">
+        <div class="gallery" @mouseover="stopAutoPlay" @mouseleave="autoPlay">
+            <figure v-for="(pic,i) in pictures" :class="{'active': currentIndex === i}" >
                 <img :src="pic.image" :alt="pic.title" >
                 <h1>{{ pic.title }}</h1>
                 <p  v-text="pic.text"></p>
