@@ -24,17 +24,20 @@
 <body>
     <div id="root">
     <section id="carousel" class="container">
+        <!-- MAIN GALLERY -->
         <div class="gallery" >
-            <figure v-for="(pic,i) in pictures" >
-                <img :src="pic.image" :alt="pic.title" :class="{'active': currentIndex === i}">
-                <h1 :class="{'active': currentIndex === i}">{{ pic.title }}</h1>
-                <p :class="{'active': currentIndex === i}" v-text="pic.text"></p>
+            <figure v-for="(pic,i) in pictures" :class="{'active': currentIndex === i}">
+                <img :src="pic.image" :alt="pic.title" >
+                <h1>{{ pic.title }}</h1>
+                <p  v-text="pic.text"></p>
             </figure>
         </div>
+        <!-- THUMBNAILS -->
         <div class="thumbnails">
-            <i class="fa-solid fa-arrow-up" id="prev"></i>
-            <i class="fa-solid fa-arrow-down" id="next"></i>
-            <img v-for="pic in pictures" :src="pic.image" :alt="pic.title" class="">
+            <!-- PREV AND NEXT BUTTON -->
+            <i class="fa-solid fa-arrow-up" id="prev" @click="changePic('prev')"></i>
+            <i class="fa-solid fa-arrow-down" id="next" @click="changePic('next')"></i>
+            <img v-for="(pic,i) in pictures" :src="pic.image" :alt="pic.title" :class="{'selected': currentIndex === i}" @click="changePic(i)">
         </div>
     </section>
     </div>
