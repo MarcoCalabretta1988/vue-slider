@@ -1,0 +1,144 @@
+/* CSS RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* UTILITIES */
+
+.container{ 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* GENERIC */
+
+body{
+    font-family: sans-serif;
+}
+
+.change-control-button button:disabled{
+
+    background-color: rgba(15, 15, 15, 0.5);
+}
+
+
+.gallery .active{
+    display: inline-block;
+}
+
+
+/* SECTION CAROUSEL */
+
+#carousel{
+    display: flex;
+    margin-top: 100px;
+}
+
+/* GALLERY */
+
+.gallery {
+    height: 400px;
+    width: 1000px;
+    overflow: hidden;
+   position: relative;
+    color: white;
+    border-radius: 30px;
+}
+
+.gallery img{
+    width: 100%;
+    height: 100%;
+    display: none;
+    object-fit: cover;
+}
+
+
+.gallery h1{
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    display: none;
+    text-shadow: 2px 2px black;
+    font-size: 30px;
+}
+
+.gallery p{
+    position: absolute;
+    bottom: 35px;
+    right: 10px;
+    left: 300px;
+    display: none;
+    text-shadow: 2px 2px black;
+    font-size: 20px;
+}
+
+/* THUMBNAILS */
+
+.thumbnails{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.thumbnails img{
+    width: 200px;
+    max-height: 80px;
+    cursor: pointer;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.thumbnails .fa-solid{
+    background-color: azure;
+    cursor: pointer;
+    font-size: 25px;
+    position: absolute;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    color:black;
+}
+
+
+.thumbnails .fa-arrow-up{
+    top : 2%;
+    left : 50%;
+}
+
+.thumbnails .fa-arrow-down{
+    bottom : 3%;
+    left : 50%;
+}
+
+.selected{
+    border: 3px solid greenyellow;
+    
+}
+
+/* BUTTON  */
+
+.change-control-button{
+    text-align: center;
+    margin: 50px;
+    
+}
+
+.change-control-button button{
+    padding: 5px 15px;
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow: 2px 2px black;
+}
+
+.change-control-button .bg-red {
+    background-color: brown;
+}
