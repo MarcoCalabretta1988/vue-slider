@@ -60,7 +60,7 @@ const app = Vue.createApp({
         }
     },
     mounted(){
-           this.rotate = setInterval (()=>{this.changePic('next');},3000);
+           this.autoPlay();
          },
 });
 app.mount('#root');
