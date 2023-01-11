@@ -29,8 +29,7 @@ const app = Vue.createApp({
         return{
             currentIndex : 0,
             pictures,
-            isrotate : true,
-            rotate : 0,
+            rotate : null,
         }
     },
 
@@ -53,18 +52,15 @@ const app = Vue.createApp({
              }
 
         },
-        autoPlay() {
-            if(this.isrotate){
-             this.rotate = setInterval (()=>{
-             this.changePic('next');
-             this.isrotate = false;
-            },3000);
-            }
+        stopAutoPlay(){
+            clearInterval(this.rotate);
+        },
+        autoPlay(){
+            this.rotate = setInterval (()=>{this.changePic('next');},3000);
+        }
+    },
+    mounted(){
+           this.rotate = setInterval (()=>{this.changePic('next');},3000);
          },
-         stopAutoPlay(){
-             clearInterval(this.rotate);
-             this.isrotate = true;
-         },
-    }
 });
 app.mount('#root');

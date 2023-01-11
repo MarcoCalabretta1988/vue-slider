@@ -26,8 +26,7 @@
     <div id="root">
         
     <section id="carousel" class="container">
-        {{ autoPlay() }}
-        
+      
         <!-- MAIN GALLERY -->
         <div class="gallery" @mouseover="stopAutoPlay" @mouseleave="autoPlay">
             <figure v-for="(pic,i) in pictures" :class="{'active': currentIndex === i}" >
